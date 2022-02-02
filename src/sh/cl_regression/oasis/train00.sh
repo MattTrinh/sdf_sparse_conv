@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python train.py --options experiments/cl_regression/oasis/oasis_00.yml

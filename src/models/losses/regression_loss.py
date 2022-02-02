@@ -10,6 +10,7 @@ class MSELoss(nn.MSELoss):
     def forward(self, out_batch: dict, input_batch: dict) -> tuple:
         loss = super(MSELoss, self).forward(input=out_batch["pred_error_image"], target=input_batch["error_image"])
         return loss.mean(), {
-            "loss": torch.mean(loss, (1, 2, 3)),
+            "loss": torch.mean(loss, (1,)),
+            "acc": torch.tensor(float('nan'))
         }
 
